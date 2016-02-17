@@ -1,0 +1,23 @@
+title: Valentin Bourreau | Présentation, CV, Portefolio
+
+menu:
+    -
+        link: headline
+        icon: home
+        name: Accueil
+    -
+        link: about
+        icon: face
+        name: Présentation
+    -
+        link: skill
+        icon: flash_on
+        name: Aptitudes
+    -
+        link: portfolio
+        icon: business_center
+        name: PortFolio
+    -
+        link: contact
+        icon: directions_run
+        name: Contact

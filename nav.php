@@ -4,7 +4,7 @@
 		<div class="nav-wrapper nav">
 			<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 			<ul class="left hide-on-med-and-down">
-				<li><a href="#home"><i class="material-icons md-light">home</i>Accueil</a></li>
+				<li><a href="#headline"><i class="material-icons md-light">home</i>Accueil</a></li>
 				<li><a href="#about"><i class="material-icons md-light">face</i>Présentation</a></li>
 				<li><a href="#skill"><i class="material-icons md-light">flash_on</i>Aptitudes</a></li>
 				<li><a href="#portfolio"><i class="material-icons md-light">business_center</i>PortFolio</a></li>
@@ -28,7 +28,7 @@
 			</div>-->
 		</div>
 		<ul class="side-nav" id="mobile-demo">
-			<li><a href="#home">Accueil</a></li>
+			<li><a href="#headline">Accueil</a></li>
 			<li><a href="#about">Présentation</a></li>
 			<li><a href="#skill">Aptitudes</a></li>
 			<li><a href="#portfolio">PortFolio</a></li>

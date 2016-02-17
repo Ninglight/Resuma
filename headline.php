@@ -5,22 +5,6 @@
 			<img id="banniere" src="img/accueil.jpg" alt="Image Nebuleuse">
 		</div>
 
-<!--
-		<div class="wrap-circle">
-			<div class="circle-1">
-				<div class="circle-2">
-					<div class="logo">
-						<h2>Valentin <span>Bourreau</span></h2>
-						<div class="roles">
-							<div>Intégrateur & Développeur </div>
-							<div>web</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
--->
-
 		<div class="headline">
 			<h2>Valentin <span>Bourreau</span></h2>
 			<h3>DEVELOPPEUR FRONT-END & BACK-END</h3>
