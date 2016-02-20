@@ -50,13 +50,33 @@ html
                     ul.left.hide-on-med-and-down
                         each item in menu
                             li
-                                a(href="#{menu.link}")
-                                    i.material-icons.md-light #{menu.icon}
-                                        span #{menu.name}
+                                a(href="#{item.link}")
+                                    i.material-icons.md-light #{item.icon}
+                                        span #{item.name}
                                         
                     ul#mobile-demo.side-nav
                         each item in menu
                             li
-                                a(href="#{menu.link}") #{menu.name}
+                                a(href="#{item.link}") #{item.name}
+        
+        section#about
+            .container
+                .row
+                
+        section#skill
+            .container
+                .row
+                    each item in skill
+                        .col.s12.m6.l4
+                            .skill-category
+                                .center-align
+                                    .title3
+                                        h3 #{item.name}
+                                            each tech in item.techno
+                                                h4 #{tech.name}
+                                                h5 #{tech.icon}
+                    
+                    
+                    
                     
                     

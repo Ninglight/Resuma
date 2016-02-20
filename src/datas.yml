@@ -21,3 +21,35 @@ menu:
         link: contact
         icon: directions_run
         name: Contact
+
+skill:
+    -
+        name: Front-end
+        icon: front
+        techno:
+            -
+                name: html
+                icon: html
+            -
+                name: css
+                icon: css
+    -
+        name: Back-end
+        icon: back
+        techno:
+            -
+                name: php
+                icon: php
+            -
+                name: css
+                icon: css
+    -
+        name: Operating System
+        icon: ops
+        techno:
+            -
+                name: Ngnix
+                icon: ngnix
+            -
+                name: Apache
+                icon: apache
