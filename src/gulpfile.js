@@ -35,12 +35,17 @@ gulp.task('img', function(){
 });
 
 gulp.task('js', function(){
-    return gulp.src('js/*.js')
+    return gulp.src('js/bin/*.js')
         .pipe($.uglify())
         .pipe(gulp.dest('./dist/js'));
 });
 
-gulp.task('dist', ['js', 'compass', 'jade', 'img'], function(){
+gulp.task('font', function() { 
+    return gulp.src('font/**.*') 
+        .pipe(gulp.dest('./dist/font')); 
+});
+
+gulp.task('dist', ['js', 'compass', 'jade', 'font', 'img'], function(){
     return gulp.src('./dist/*.html')
         .pipe($.useref())
         .pipe(gulp.dest('./dist/'));
@@ -60,12 +65,27 @@ gulp.task('watch', function(){
     gulp.watch('**/*.jade', function(){
         gulp.start('jade');
     });
-    gulp.watch(['*.html', 'js/*.js', 'css/*.css']).on('change',function(event){
+    gulp.watch(['.dist/*.html', '.dist/js/*.js', '.dist/css/*.css']).on('change',function(event){
         console.log(event);
     });
 });
 
-gulp.task('clean', function(){
+gulp.task('clean', ['cleanzip'], function(){
     return gulp.src('./dist', {read: false})
+        .pipe($.clean());
+});
+
+gulp.task('cleancss', function(){
+    return gulp.src(['./dist/css/*.css', '!./dist/css/min.css'], {read: false})
+        .pipe($.clean());
+});
+
+gulp.task('cleanjs', function(){
+    return gulp.src(['./dist/js/*.js', '!./dist/js/min.js'], {read: false})
+        .pipe($.clean());
+});
+
+gulp.task('cleanzip', function(){
+    return gulp.src('./zip', {read: false})
         .pipe($.clean());
 });

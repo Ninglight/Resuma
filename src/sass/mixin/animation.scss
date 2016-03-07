@@ -1,0 +1,188 @@
+@mixin animation($name, $duration, $timing-function, $delay, $iteration-count, $direction, $fill-mode, $play-state) {
+
+    @if $name != null {
+        -webkit-animation-name: $name;
+        -moz-animation-name: $name;
+        -ms-animation-name: $name;
+        -o-animation-name: $name;
+        animation-name: $name;
+    }
+
+    @if $duration != null {
+        -webkit-animation-duration: $duration;
+        -moz-animation-duration: $duration;
+        -ms-animation-duration: $duration;
+        -o-animation-duration: $duration;
+        animation-duration: $duration;
+    }
+
+    @if $timing-function != null {
+        -webkit-animation-timing-function: $timing-function;
+        -moz-animation-timing-function: $timing-function;
+        -ms-animation-timing-function: $timing-function;
+        -o-animation-timing-function: $timing-function;
+        animation-timing-function: $timing-function;
+    }
+
+    @if $delay != null {
+        -webkit-animation-delay: $delay;
+        -moz-animation-delay: $delay;
+        -ms-animation-delay: $delay;
+        -o-animation-delay: $delay;
+        animation-delay: $delay;
+    }
+
+    @if $iteration-count != null {
+        -webkit-animation-iteration-count: $iteration-count;
+        -moz-animation-iteration-count: $iteration-count;
+        -ms-animation-iteration-count: $iteration-count;
+        -o-animation-iteration-count: $iteration-count;
+        animation-iteration-count: $iteration-count;
+    }
+
+    @if $direction != null {
+        -webkit-animation-direction: $direction;
+        -moz-animation-direction: $direction;
+        -ms-animation-direction: $direction;
+        -o-animation-direction: $direction;
+        animation-direction: $direction;
+    }
+
+    @if $fill-mode != null {
+        -webkit-animation-fill-mode: $fill-mode;
+        -moz-animation-fill-mode: $fill-mode;
+        -ms-animation-fill-mode: $fill-mode;
+        -o-animation-fill-mode: $fill-mode;
+        animation-fill-mode: $fill-mode;
+    }
+
+    @if $play-state != null {
+        -webkit-animation-play-state: $play-state;
+        -moz-animation-play-state: $play-state;
+        -ms-animation-play-state: $play-state;
+        -o-animation-play-state: $play-state;
+        animation-play-state: $play-state;
+    }
+
+}
+
+@mixin transition($args) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+/*Mixin filter for headline*/
+@mixin filter-flou($blur, $sepia, $brightness) {
+    filter: blur($blur) sepia($sepia) brightness($brightness);
+    -webkit-filter: blur($blur) sepia($sepia) brightness($brightness);
+    -moz-filter: blur($blur) sepia($sepia) brightness($brightness);
+    -o-filter: blur($blur) sepia($sepia) brightness($brightness);
+    -ms-filter: blur($blur) sepia($sepia) brightness($brightness);
+}
+
+@mixin filter($blur, $brightness, $contrast, $drop-shadow, $grayscale, $hue-rotate, $invert, $opacity, $saturate, $sepia, $url) {
+
+    @if $blur == null {
+        $blur: 0;
+    }
+
+    @if $brightness == null {
+        $brightness: 1;
+    }
+
+    @if $contrast == null {
+        $contrast: 1;
+    }
+
+    @if $drop-shadow == null {
+        $drop-shadow: none;
+    }
+
+    @if $grayscale == null {
+        $grayscale: 0;
+    }
+
+    @if $hue-rotate == null {
+        $hue-rotate: 0;
+    }
+
+    @if $invert == null {
+        $invert: 0;
+    }
+
+    @if $opacity == null {
+        $opacity: 1;
+    }
+
+    @if $saturate == null {
+        $saturate: 1;
+    }
+
+    @if $sepia == null {
+        $sepia: 0;
+    }
+
+    @if $url == null {
+        $url: '';
+    }
+
+    filter: blur($blur)
+        brightness($brightness)
+        contrast($contrast)
+        drop-shadow($drop-shadow)
+        grayscale($grayscale)
+        hue-rotate($hue-rotate)
+        invert($invert)
+        opacity($opacity)
+        saturate($saturate)
+        sepia($sepia)
+        url($url);
+    -webkit-filter: blur($blur)
+        brightness($brightness)
+        contrast($contrast)
+        drop-shadow($drop-shadow)
+        grayscale($grayscale)
+        hue-rotate($hue-rotate)
+        invert($invert)
+        opacity($opacity)
+        saturate($saturate)
+        sepia($sepia)
+        url($url);
+    -moz-filter: blur($blur)
+        brightness($brightness)
+        contrast($contrast)
+        drop-shadow($drop-shadow)
+        grayscale($grayscale)
+        hue-rotate($hue-rotate)
+        invert($invert)
+        opacity($opacity)
+        saturate($saturate)
+        sepia($sepia)
+        url($url);
+    -o-filter: blur($blur)
+        brightness($brightness)
+        contrast($contrast)
+        drop-shadow($drop-shadow)
+        grayscale($grayscale)
+        hue-rotate($hue-rotate)
+        invert($invert)
+        opacity($opacity)
+        saturate($saturate)
+        sepia($sepia)
+        url($url);
+    -ms-filter: blur($blur)
+        brightness($brightness)
+        contrast($contrast)
+        drop-shadow($drop-shadow)
+        grayscale($grayscale)
+        hue-rotate($hue-rotate)
+        invert($invert)
+        opacity($opacity)
+        saturate($saturate)
+        sepia($sepia)
+        url($url);
+
+}
