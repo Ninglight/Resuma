@@ -1,0 +1,48 @@
+skill:
+    -
+        name: Graphisme
+        icon: graphic
+        techno:
+            -
+                name: Illustator
+                icon: illustator
+            -
+                name: Photoshop
+                icon: photoshop
+            -
+                name: Edge Animate
+                icon: animate
+
+    -
+        name: Front-end
+        icon: front
+        techno:
+            -
+                name: HTML
+                icon: html
+            -
+                name: CSS
+                icon: css
+            -
+                name: Javascript
+                icon: javascript
+    -
+        name: Back-end
+        icon: back
+        techno:
+            -
+                name: PHP
+                icon: php
+            -
+                name: NodeJs
+                icon: node
+    -
+        name: Operating System
+        icon: operate
+        techno:
+            -
+                name: Serveur (Nginx/Apache)
+                icon: ngnix
+            -
+                name: Base de données (MySQL/Postgresql)
+                icon: apache

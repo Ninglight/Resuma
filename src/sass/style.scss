@@ -1,4 +1,84 @@
-@import "mixin/animation";
+@import "libmixsass/libmixin";
+
+//SVG Colors
+.st0{display:none;}
+.st1{display:inline;fill:#C49A6C;}
+.st2{display:inline;fill:#C2B59B;}
+.st3{display:inline;fill:none;stroke:#000000;stroke-miterlimit:10;}
+.st4{display:inline;}
+.st5{fill:#E9F0BD;}
+.st6{fill:#FFDCAE;}
+.st7{fill:#D3D0E8;}
+.st8{fill:#FFE2BD;}
+.st9{fill:#CFE8D4;}
+.st10{fill:#C4E4CA;}
+.st11{fill:#E2C0A5;}
+.st12{fill:#E4ECAE;}
+.st13{fill:#F3BAB5;}
+.st14{fill:#DCB493;}
+.st15{fill:#CBE9E6;}
+.st16{fill:#BEE4E1;}
+.st17{fill:#F1AAA6;}
+.st18{display:inline;fill:none;}
+.st19{fill:none;}
+.st20{fill:#594A42;}
+.st21{fill:none;stroke:#000000;stroke-miterlimit:10;}
+.st22{fill:#FFFFFF;}
+.st23{fill:#D1D3D4;}
+.st24{fill:#BCBEC0;}
+.st25{fill:#A7A9AC;}
+.st26{fill:#303441;}
+.st27{fill:#444755;}
+.st28{fill:#3C3F4D;}
+.st29{fill:#2D303D;}
+.st30{fill:#333646;}
+.st31{fill:#2D313E;}
+.st32{fill:#8B5E3C;}
+.st33{fill:#FEEBC7;}
+.st34{fill:#EFCEAC;}
+.st35{fill:#333746;}
+.st36{fill:#E6EAED;}
+.st37{fill:#D4D8DD;}
+.st38{fill:#D4DBE1;}
+.st39{fill:#C3C7CF;}
+.st40{fill:#F1F2F2;}
+.st41{fill:#414042;}
+.st42{fill:#E6E7E8;}
+.st43{fill:url(#XMLID_3975_);}
+.st44{fill:#D5D8DB;}
+.st45{fill:#C2B59B;}
+.st46{fill:#A49C8D;}
+.st47{fill:#CDC1AC;}
+.st48{opacity:0.5;fill:#F1F2F2;}
+.st49{fill:#C3C0C6;}
+.st50{fill:#858791;}
+.st51{fill:#333747;}
+.st52{fill:#AEAFB6;}
+.st53{opacity:0.6;}
+.st54{opacity:0.4;fill:#FFFFFF;}
+.st55{opacity:0.32;}
+.st56{fill:#C7C8CA;}
+.st57{fill:#6FBA86;}
+.st58{fill:#8CC49A;}
+.st59{fill:#F3ECE6;}
+.st60{fill:#F9AA8F;}
+.st61{fill:#E4C2A6;}
+.st62{fill:#FABAA2;}
+.st63{fill:#EACFB9;}
+.st64{fill:#739F7F;}
+.st65{fill:none;stroke:#009444;stroke-width:0.25;stroke-miterlimit:10;}
+.st66{fill:#46B758;}
+.st67{fill:#128C45;}
+.st68{fill:#1DA74A;}
+.st69{fill:#48B756;}
+.st70{fill:#58B96E;}
+.st71{fill:#40B64D;}
+.st72{fill:#1FAD4B;}
+.st73{fill:#1FAC4B;}
+
+//Couleurs principales
+$first-color: #EBE8E1;
+$second-color: #4E4D4B;
 
 @font-face {
     font-family: 'Material Icons';
@@ -16,6 +96,32 @@
     font-family: Coves;
     src: url("../font/Coves Light.otf") format("opentype");
 }
+
+@font-face {
+    font-family: AbrahamLincoln;
+    src: url("../font/AbrahamLincoln.ttf");
+}
+
+@font-face {
+    font-family: Lobster;
+    src: url("../font/Lobster 1.4.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Matiz;
+    src: url("../font/Matiz.ttf");
+}
+
+@font-face {
+    font-family: MrDafoe;
+    src: url("../font/MrDafoe-Regular.ttf");
+}
+
+@font-face {
+    font-family: gradeCursive;
+    src: url("../font/5thgradecursive-2-italic.ttf");
+}
+
 
 .material-icons {
     font-family: 'Material Icons';
@@ -53,10 +159,10 @@
 /*----------------------------BASE------------------------------------- */
 
 body{
-    background: #090310;
+    background: $first-color;
     background-position: center top;
     background-attachment:fixed;
-    color: #a2a2a2;
+    color: $second-color;
     font-family: sans-serif;
     font-size:15px;
     line-height:24px;
@@ -127,7 +233,7 @@ a:focus {
 }
 
 .background{
-    background-color: #675852;
+    background-color: $first-color;
 }
 
 /* ----------------------------------------------------------------------
@@ -139,30 +245,23 @@ a:focus {
     line-height: 0;
     height: 100%;
     width: 100%;
-    color: black;
 
 }
 
 #banniere{
     position: fixed;
-    @include filter(2px, 0.5, null, null, null, null, null, null, null, 1, null);
+    /*@include filter(2px, 0.5, null, null, null, null, null, null, null, 1, null);*/
+    @include filter-flou(2px, 1, 0.5);
 }
+
+
+// Head Text
 
 .headline{
     z-index: 120;
     text-align: center;
     width: 100%;
-    margin-top: 16%;
-}
-
-.headline h2{
-    color:white;
-    font-size: 100px;
-    font-weight: normal;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-family: Coves, sans-serif;
-    letter-spacing: 1.5px;
+    margin-top: 130px;
 }
 
 .headline span{
@@ -170,37 +269,38 @@ a:focus {
     font-weight: 700;
 }
 
-.headline h3{
-    color:white;
-    font-size: 18px;
-    font-family: 'Merriweather', sans-serif;
+.headline h1,h2,h3,h4 {
+    color: $first-color;
     font-weight: 300;
-    height: 24px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-#social {
-    position:absolute;
-    height: 56px;
-    width: 100%;
-    top:88%;
-    left:0;
-    right:0;
-    text-align:center;
+.headline h1 {
+    font-family: Lobster, sans-serif;
+    font-size: 440%;
+    color: #c2b088;
 }
 
-#white{
-    color: #fff;
-    margin-right: 15px;
-    margin-left: 15px;
-    margin-top: 6px;
+.headline h2{
+    font-family: Matiz, sans-serif;
+    font-size: 310%;
+    text-transform: uppercase;
+    color: #c2b088;
 }
 
-#white:hover{
-    color: #8d6e63;
-    transition: color 0.6s;
+.headline h3{
+    font-family: AbrahamLincoln, sans-serif;
+    font-size: 300%;
 }
 
-#expand {
+.headline h4 {
+    font-family: MrDafoe, sans-serif;
+    font-size: 200%;
+}
+
+// Direction Bow
+.expand {
     position:absolute;
     height: 56px;
     width: 100%;
@@ -210,26 +310,49 @@ a:focus {
     text-align:center;
 }
 
-.headInit {
-    @include animation('headInit', 1s, linear, null, null, null, forwards, null);
-    /*animation: flou 1s linear;
-    -webkit-animation: flou 1s linear;
-    -moz-animation: flou 1s linear;*/
+// Icon Social Network
+.social {
+    position:absolute;
+    height: 56px;
+    width: 100%;
+    top:88%;
+    left:0;
+    right:0;
+    text-align:center;
+}
 
-    /*animation-fill-mode: forwards;
+.icon {
+    color: #fff;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 6px;
+}
+
+.icon:hover{
+    color: #c2b088;
+    transition: color 0.6s;
+}
+
+.headInit {
+    /*@include animation('headInit', 1s, linear, null, null, null, forwards, null);*/
+    animation: headBlur 1s linear;
+    -webkit-animation: headBlur 1s linear;
+    -moz-animation: headBlur 1s linear;
+
+    animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
-    -moz-animation-fill-mode: forwards;*/
+    -moz-animation-fill-mode: forwards;
 }
 
 .headBlur {
-    @include animation('headBlur', 1s, linear, null, null, null, forwards, null);
-    /*animation: antiflou 1s linear;
-    -webkit-animation: antiflou 1s linear;
-    -moz-animation: antiflou 1s linear;*/
+    /*@include animation('headBlur', 1s, linear, null, null, null, forwards, null);*/
+    animation: headInit 1s linear;
+    -webkit-animation: headInit 1s linear;
+    -moz-animation: headInit 1s linear;
 
-    /*animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
-    -moz-animation-fill-mode: forwards;*/
+    -moz-animation-fill-mode: forwards;
 }
 
 
@@ -238,8 +361,7 @@ a:focus {
 -----------------------------------------------------------------------*/
 
 #navigation{
-    background-color: black;
-    opacity: 0.7;
+    background-color: white;
 }
 
 .fixNavigation{
@@ -270,55 +392,143 @@ a:focus {
 ----------------------------ABOUT-------------------------------------
 -----------------------------------------------------------------------*/
 
-.profile{
-    padding-bottom: 20px;
+// TEXT-ABOUT
+
+.text-about {
+    background-color: red;
+    margin: 0 40px;
+    text-align: center;
+    padding-top: 40px;
 }
 
-.profile img{
-    padding: 30px;
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-    margin-top: 50px;
+// WORKSPACE
+
+.workspace {
+    position:relative;
 }
 
-.profile h3{
+.workspace img {
     position: absolute;
-    top: 930px;
-    font-size:40px;
-    color: white;
+   top: 25px;
+   left: 30px;
+   width: 100%;
+   height: 100%;
 }
 
-.profile ul{
-    margin:0;
-    padding:0;
-    margin-left: 20px;
+// BOX-RESUME
+
+.box-about {
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 30px;
+    margin: 30% 5% 0 5%;
 }
-.profile ul li{
-    margin:8px 0;
-    padding:0;
-    list-style:none;
+
+.center-top {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: -50%;
 }
-.profile ul li a{
-    text-decoration: none;
+
+.box-about ul {
+    margin: 0;
+    padding: 0;
 }
-.profile ul li strong{
-    width:90px;
+
+.box-about img {
+    width: 200px
+}
+
+.box-about ul li {
+    margin: 8px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.box-about ul li strong {
+    width: 90px;
     display: inline-block;
 }
 
-.about{
-    margin-top: 20px;
-    padding: 20px;
-}
-
-.about p{
-    margin: 10px;
+.center-bottom {
+    position: absolute;
+    left: 0;
+    bottom: -22px;
+    text-align: center;
+    width: 100%;
 }
 
 /* ----------------------------------------------------------------------
 ----------------------------SKILL-------------------------------------
 -----------------------------------------------------------------------*/
+
+// BOX-RESUME
+
+.box-skill {
+    position: relative;
+    padding: 20px;
+}
+
+.box-skill ul {
+    margin: 0;
+    padding: 0;
+}
+
+.box-skill img {
+    width: 150px;
+}
+
+.box-skill ul li {
+    margin: 0;
+    list-style: none;
+}
+
+.box-skill ul li strong {
+    width: 90px;
+    display: inline-block;
+}
+
+.center-top-skill {
+    text-align: center;
+    margin-top: -25%;
+}
+
+.head-box-skill {
+    margin-top: 30% ;
+    border-radius: 3px;
+}
+
+.head-box-skill h3 {
+    color: $second-color;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 200;
+}
+
+.item-box-skill {
+
+}
+
+.item-box-skill li {
+    padding: 10px 0;
+}
+
+.item-box-skill li i {
+    margin-left: 10px;
+    width: 80px;
+}
+
+
+.item-box-skill li p {
+    margin-left: 10px;
+}
+
+.progress {
+    margin-left: 10%;
+    width: 80%
+}
+
 
 .circle1 {
     width: 80px;
@@ -539,6 +749,9 @@ a:focus {
     font-family: Coves, sans-serif;
 }
 
+.title3 img {
+    width: 200px;
+}
 
 .title-icon {
     display: inline-block;
@@ -586,6 +799,10 @@ a:focus {
     background: black;
 }
 
+.white{
+    background: rgb(149, 108, 59);
+}
+
 .darken{
     background: #0b0600;
     opacity:0.9;
@@ -597,47 +814,6 @@ a:focus {
 }
 
 
-/* color SVG */
-
-.st0{display:none;}
-.st1{fill:#B2D6F1;}
-.st2{fill:#8CC6EC;}
-.st3{fill:#B0BDC2;}
-.st4{fill:#312F2F;}
-.st5{fill:#070807;}
-.st6{fill:#57B4AD;}
-.st7{fill:#00A79D;}
-.st8{fill:#BFD7DC;}
-.st9{fill:#53748A;}
-.st10{fill:#315A6E;}
-.st11{fill:#748F9D;}
-.st12{fill:#D6EBF2;}
-.st13{fill:#86A8BB;}
-.st14{fill:#52738A;}
-.st15{fill:#D7EBF2;}
-.st16{fill:#70A0B6;}
-.st17{fill:#07A4D0;}
-.st18{fill:#3BB2DA;}
-.st19{fill:#C0D7DD;}
-.st20{fill:#05A5D1;}
-.st21{fill:#30596D;}
-.st22{fill:#050606;}
-.st23{fill:#3E4646;}
-.st24{fill:#F15C2D;}
-.st25{fill:#F4B11B;}
-.st26{fill:#3D4545;}
-.st27{fill:#87A7BB;}
-.st28{fill:#F15A2A;}
-.st29{fill:#C0D8DD;}
-.st30{fill:#04A5D0;}
-.st31{fill:#BED7DD;}
-.st32{fill:#3D4645;}
-.st33{fill:#F05727;}
-.st34{fill:#19658B;}
-.st35{fill:#5DADC5;}
-.st36{fill:#329BBD;}
-.st37{fill:#F47C4B;}
-.st38{fill:none;stroke:#000000;stroke-miterlimit:10;}
 
 
 @media (max-width: 1199px) {

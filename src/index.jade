@@ -1,95 +1,130 @@
-doctype html
-html
-    head
-        title= title
-        meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0") 
-        meta(name="description" content="Valentin Bourreau - Présentation, CV, Portfolio. Ce site a été construit à l'aide de MaterializeCSS, Font-Awersome, SASS - Compass, Jade et d'un peu d'imagination. Il est totalement responsive.")
-        meta(name="keywords" content="Présentation, CV, Portfolio, Valentin, Bourreau, Valentin Bourreau")
-        meta(name="author" content="Valentin Bourreau")
-        
-        // Favicon
-        link(rel="icon" href="img/logo.ico")
-        
-        //Stylesheet
-        // build:css css/min.css
-        link(rel="stylesheet" type="text/css" media="screen,projection" href="css/materialize.css")
-        link(rel="stylesheet" type="text/css" media="screen,projection" href="css/style.css")
-        link(rel="stylesheet" type="text/css" media="screen,projection" href="css/font-awesome.css")
-        // endbuild
-        
-        // Fonts
-        link(rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/icon?family=Material+Icons")
-        link(rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300")
+include template/head.jade
 
-    body
-        //Header
-        header#accueil.parallax-container
-            .parallax
-                img#banniere(src="img/accueil.jpg" alt="Fond représentation ville divisé en deux pas un ordinateur montrant un paysage de montagne")
+include template/header.jade
+
+// Navigation
+nav#navigation.fixed
+    .nav.nav-wrapper
+        a.button-collapse(href="#" data-activates="mobile-demo")
+        i.material-icons menu
+        ul.left.hide-on-med-and-down
+            each item in menu
+                li
+                    a(href="#{item.link}")
+                        i.material-icons.md-light #{item.icon}
+                            span #{item.name}
+                            
+        ul#mobile-demo.side-nav
+            each item in menu
+                li
+                    a(href="#{item.link}") #{item.name}
+
+// About
+section#about.about.white
+    .container
+        .row
+            .text-about
+                span Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     
-            .headline
-                h2 Valentin <span>Bourreau</span>
-                h3 DEVELOPPEUR FRONT-END & BACK-END
-                
-            .row
-                .col.s12
-                    #expand
-                        a(href="#about")
-                            i(id="white" class="fa fa-angle-double-down fa-3x")
-            
-            .row
-                .col.s12
-                    #social
-                        each social in ["facebook", "twitter", "linkedin", "github", "skype"]
-                            a(href="index.php")
-                                i#white(class="fa fa-#{social} fa-3x")
-        
-        // Navigation
-        nav#navigation.fixed
-            .nav.nav-wrapper
-                a.button-collapse(href="#" data-activates="mobile-demo")
-                i.material-icons menu
-                ul.left.hide-on-med-and-down
-                    each item in menu
+        .row
+            .col.s12.m7.l8
+                .workspace
+                    
+            .col.s12.m5.l4
+                .box-about
+                    .center-top
+                        img.circle.responsive-img(src='img/avatar.jpg', alt='')
+                    ul
                         li
-                            a(href="#{item.link}")
-                                i.material-icons.md-light #{item.icon}
-                                    span #{item.name}
-                                    
-                ul#mobile-demo.side-nav
-                    each item in menu
+                            strong Name
+                            |  Bourreau Valentin
                         li
-                            a(href="#{item.link}") #{item.name}
+                            strong Birthday
+                            |  26 Avril 2016
+                        li
+                            strong Address
+                            |  Nantes, France
+                        li
+                            strong Website
+                            |  Vatioa.com
+                    .center-bottom
+                        a.waves-effect.waves-light.btn.indigo.lighten-1
+                            i.material-icons.right file_download
+                            | Télécharger le CV
+                            
+// Skill        
+section#skill.white
+    .container
+        .row
+            each item in skill
+                .col.s12.m6.l3
+                    .box-skill
+                        .head-box-skill
+                            .center-top-skill
+                                img(src="img/skill/#{item.icon}.svg")
+                            h3 #{item.name}
+                        .item-box-skill
+                            ul
+                                each tech in item.techno
+                                    li
+                                        .row
+                                            .col.s12.l3 
+                                                .align-center
+                                                    strong #{tech.icon}
+                                            .col.s12.l9 
+                                                | #{tech.name}
+                                                .progress
+                                                    .determinate(style="width: 70%")
+                                                    
+// 
+section.white
+    .container
+        .row
+            .col.s12.m6.l6
+                .case
+                    .title3
+                        | Enseignements
+                        .row
+                            .col.s12.m12.l12
+                                .title-icon
+                                    i.fa.fa-graduation-cap
+                    .row.experience
+                        .col.s12.m2.l2
+                            .year
+                            | 2016 
+                            hr
+                            | 2015
+                        .col.s12.m10.l10
+                            .desc
+                                h4 Licence Pro, Systèmes Informatiques et Logiciels
+                                p.subtitle Université de Nantes
+                                p 
+                                    | Commodo enim aliquam suspendisse tortor cum diam, commodo facilisis, rutrum et duis nisl porttitor, vel eleifend odio ultricies ut, orci in adipiscing felis velit nibh.
+                    
+                    .row.experience
+                        .col.s12.m2.l2
+                            .year
+                            | 2016 
+                            hr
+                            | 2015
+                        .col.s12.m10.l10
+                            .desc
+                                h4 Licence Pro, Systèmes Informatiques et Logiciels
+                                p.subtitle Université de Nantes
+                                p 
+                                    | Commodo enim aliquam suspendisse tortor cum diam, commodo facilisis, rutrum et duis nisl porttitor, vel eleifend odio ultricies ut, orci in adipiscing felis velit nibh.
+                    
+                    .row.experience
+                        .col.s12.m2.l2
+                            .year
+                            | 2016 
+                            hr
+                            | 2015
+                        .col.s12.m10.l10
+                            .desc
+                                h4 Licence Pro, Systèmes Informatiques et Logiciels
+                                p.subtitle Université de Nantes
+                                p 
+                                    | Commodo enim aliquam suspendisse tortor cum diam, commodo facilisis, rutrum et duis nisl porttitor, vel eleifend odio ultricies ut, orci in adipiscing felis velit nibh.
         
-        // About
-        section#about
-            .container
-                .row
-        
-        // Skill        
-        section#skill
-            .container
-                .row
-                    each item in skill
-                        .col.s12.m6.l4
-                            .skill-category
-                                .center-align
-                                    .title3
-                                        h3 #{item.name}
-                                            each tech in item.techno
-                                                h4 #{tech.name}
-                                                h5 #{tech.icon}
-                                                
-        // Import js
-        script(src='https://code.jquery.com/jquery-2.1.1.min.js')
-        script(src='https://maps.google.com/maps/api/js?sensor=false&ver=4.1.5')
-        // build:js js/min.js
-        script(src='js/materialize.js')
-        script(src='js/init.js')
-        // endbuild
-
-        // Foot
-        footer.page-footer.black
-            .footer-copyright
-                | Copyright &copy; 2016 Valentin Bourreau, Tous droits r&eacute;serv&eacute;s.
+include template/footer.jade
