@@ -1,23 +1,19 @@
 //Header
-header#accueil.parallax-container
+header#accueil.parallax-container.scrollspy
     .parallax
         img#banniere(src="img/accueil.jpg" alt="Fond représentation ville divisé en deux pas un ordinateur montrant un paysage de montagne")
 
     .headline
-        h1 WebDesigner &
+        h1 Webdesigner &
         h2 Developpeur Front-end
         h3 Valentin Bourreau
         h4 Nantes
         
-    .row
-        .col.s12
-            .expand
-                a(href="#about")
-                    i.icon(class="fa fa-angle-double-down fa-3x")
-    
-    .row
-        .col.s12
-            .social
-                each item in social
-                    a(href="#{item.name}")
-                        i.icon(class="fa fa-#{item.name} fa-3x")
+    .expand
+        a(href="#about")
+            i.icon(class="fa fa-angle-double-down fa-3x")
+
+    .social
+        each item in social
+            a(href="#{item.link}" target="_blank")
+                i.icon(class="fa fa-#{item.name} fa-3x")

@@ -3,128 +3,234 @@ include template/head.jade
 include template/header.jade
 
 // Navigation
-nav#navigation.fixed
-    .nav.nav-wrapper
-        a.button-collapse(href="#" data-activates="mobile-demo")
-        i.material-icons menu
-        ul.left.hide-on-med-and-down
+nav#navigation
+    .nav-wrapper
+        a.brand-logo.hide-on-large-only(href='#!')
+            img(src='img/logo.png', alt='logo')
+        a.button-collapse(href='#', data-activates='mobile-demo')
+            i.material-icons menu
+        ul.left.hide-on-med-and-down.table-of-contents
             each item in menu
-                li
-                    a(href="#{item.link}")
-                        i.material-icons.md-light #{item.icon}
-                            span #{item.name}
-                            
+                li(class=".btn_#{item.link}")
+                    a(href='##{item.link}')
+                        i.material-icons.md-light.left #{item.icon}
+                        | #{item.name}
         ul#mobile-demo.side-nav
             each item in menu
-                li
-                    a(href="#{item.link}") #{item.name}
+                li(class=".btn_#{item.link}")
+                    a(href='##{item.link}')
+                        .row.valign-wrapper
+                            .s1.valign
+                                i.material-icons.md-light #{item.icon}
+                            .col.offset-s1.s9.valign #{item.name}
+                            
+                            
+//- nav#navigation.fixed
+//-     .nav-wrapper
+//-         a.button-collapse(href="#" data-activates="mobile-demo")
+//-             i.material-icons menu
+//-         ul.left.hide-on-med-and-down
+//-             each item in menu
+//-                 li
+//-                     a(href="#{item.link}")
+//-                         i.material-icons.md-light #{item.icon}
+//-                             span #{item.name}
+//-                             
+//-         ul#mobile-demo.side-nav
+//-             each item in menu
+//-                 li
+//-                     a(href="#{item.link}") #{item.name}
 
 // About
-section#about.about.white
+section#about.about.white.scrollspy
     .container
+        .case
+            .row
+                .col.s12.l8.offset-l2
+                    .title3
+                        h2 presentation
+                        hr
+         
         .row
-            .text-about
-                span Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    
-        .row
+            // workspace
             .col.s12.m7.l8
                 .workspace
-                    
-            .col.s12.m5.l4
-                .box-about
+                    #window.window
+                        img#night(src='img/window/night.svg', alt='')
+                        img#leeves(src='img/window/leeves.svg', alt='')
+                        img(src='img/window/tree.svg', alt='')
+                        img(src='img/window/window.svg', alt='')
+                        img#head(src='img/window/kodama_head.svg', alt='')
+                        img(src='img/window/kodama_body.svg', alt='')
+                    #desk.desk
+                        img(src='img/desk/body.svg', alt='')
+                        img(src='img/desk/bucket.svg', alt='')
+                        img(src='img/desk/desk.svg', alt='')
+                        img(src='img/desk/light.svg', alt='')
+                        
+            //card-about
+            .col.s12.m5.l4.offset-m7.offset-l8
+                .card-about.card-panel
                     .center-top
                         img.circle.responsive-img(src='img/avatar.jpg', alt='')
                     ul
-                        li
-                            strong Name
-                            |  Bourreau Valentin
-                        li
-                            strong Birthday
-                            |  26 Avril 2016
-                        li
-                            strong Address
-                            |  Nantes, France
-                        li
-                            strong Website
-                            |  Vatioa.com
+                        each item in about
+                            li
+                                strong #{item.name}
+                                |  #{item.content}
                     .center-bottom
-                        a.waves-effect.waves-light.btn.indigo.lighten-1
+                        a.waves-effect.waves-light.btn.indigo.lighten-1(href="../ressources/Curriculum Vitae - Valentin Bourreau.pdf" target="_blank")
                             i.material-icons.right file_download
                             | Télécharger le CV
+                        
+        .row
+            .col.s12.l8.offset-l2
+                .contentAbout
+                    each item in aboutText
+                        h6 #{item.content}
+            
+            
                             
 // Skill        
-section#skill.white
+section#skill.white.scrollspy
     .container
+        .case
+            .row
+                .col.s12.l8.offset-l2
+                    .title3
+                        h2 competences
+                        hr
         .row
             each item in skill
                 .col.s12.m6.l3
-                    .box-skill
-                        .head-box-skill
+                    div(class="card-skill card-panel lighten-5 #{item.color}")
+                        .card-skill-head
                             .center-top-skill
                                 img(src="img/skill/#{item.icon}.svg")
                             h3 #{item.name}
-                        .item-box-skill
-                            ul
+                        .card-skill-content
+                            ul.collapsible(data-collapsible="accordion")
                                 each tech in item.techno
                                     li
-                                        .row
-                                            .col.s12.l3 
-                                                .align-center
-                                                    strong #{tech.icon}
-                                            .col.s12.l9 
-                                                | #{tech.name}
-                                                .progress
-                                                    .determinate(style="width: 70%")
-                                                    
-// 
-section.white
-    .container
+                                        div(class="collapsible-header lighten-5 #{item.color}")
+                                            .row
+                                                .col.s3
+                                                    .align-center
+                                                        img(src='img/techno/#{tech.icon}', alt='#{tech.icon}')
+                                                .col.s9 
+                                                    | #{tech.name}
+                                                    div(class="progress lighten-4 #{item.color}")
+                                                        div(class="determinate lighten-2 #{item.color}" style="width: #{tech.percent}%")
+                                        div.collapsible-body
+                                            if tech.techno
+                                                p Technologies utilisées : #{tech.techno}
+                                            if tech.framework
+                                                p Framework utilisées : #{tech.framework}
+                                            p #{tech.content}
+                                            if tech.content2
+                                                p #{tech.content2}
         .row
-            .col.s12.m6.l6
-                .case
+            .sub-section.right
+                img.hand(src="img/hand.svg")
+                p Cliquez sur les compétences pour plus d'information
+                                            
+
+// Timeline
+section#timeline.white.scrollspy
+    .container
+        .case
+            .row
+                .col.s12.l8.offset-l2
                     .title3
-                        | Enseignements
-                        .row
-                            .col.s12.m12.l12
-                                .title-icon
-                                    i.fa.fa-graduation-cap
-                    .row.experience
-                        .col.s12.m2.l2
-                            .year
-                            | 2016 
-                            hr
-                            | 2015
-                        .col.s12.m10.l10
-                            .desc
-                                h4 Licence Pro, Systèmes Informatiques et Logiciels
-                                p.subtitle Université de Nantes
-                                p 
-                                    | Commodo enim aliquam suspendisse tortor cum diam, commodo facilisis, rutrum et duis nisl porttitor, vel eleifend odio ultricies ut, orci in adipiscing felis velit nibh.
-                    
-                    .row.experience
-                        .col.s12.m2.l2
-                            .year
-                            | 2016 
-                            hr
-                            | 2015
-                        .col.s12.m10.l10
-                            .desc
-                                h4 Licence Pro, Systèmes Informatiques et Logiciels
-                                p.subtitle Université de Nantes
-                                p 
-                                    | Commodo enim aliquam suspendisse tortor cum diam, commodo facilisis, rutrum et duis nisl porttitor, vel eleifend odio ultricies ut, orci in adipiscing felis velit nibh.
-                    
-                    .row.experience
-                        .col.s12.m2.l2
-                            .year
-                            | 2016 
-                            hr
-                            | 2015
-                        .col.s12.m10.l10
-                            .desc
-                                h4 Licence Pro, Systèmes Informatiques et Logiciels
-                                p.subtitle Université de Nantes
-                                p 
-                                    | Commodo enim aliquam suspendisse tortor cum diam, commodo facilisis, rutrum et duis nisl porttitor, vel eleifend odio ultricies ut, orci in adipiscing felis velit nibh.
-        
+                        h2 Parcours
+                        hr
+                    .row
+                        each item in timeline
+                            .row.experience
+                                .col.s12.m2.l3
+                                    .year
+                                        | #{item.date_start} 
+                                        .title-icon
+                                            i(class=" fa fa-#{item.icon}")
+                                        | #{item.date_end} 
+                                .col.s12.m10.l9
+                                    .desc
+                                        h4 #{item.name} 
+                                        p.subtitle #{item.location} - #{item.city}
+                                        p 
+                                            | #{item.content} 
+                                        if item.content2
+                                            p.subcontent #{item.content2}
+                                        if item.content3
+                                            p.subcontent #{item.content3}
+
+// PortFolio
+section#portfolio.white.scrollspy
+    .container
+        .case
+            .row
+                .col.s12.l8.offset-l2
+                    .title3
+                        h2 PortFolio
+                        hr
+                    .row
+                        each item in portfolio
+                            .col.s12.m6
+                                .card-portfolio.card
+                                    .card-image.waves-effect.waves-block.waves-light
+                                        img(src='#{item.img}').activator
+                                    .card-content
+                                        span.card-title.activator.grey-text.text-darken-4 #{item.name}
+                                            i.material-icons.right more_vert
+                                        p.center-align
+                                            | Work in progress
+                                    .card-reveal
+                                        span.card-title.grey-text.text-darken-4 #{item.name}
+                                            i.material-icons.right close
+                                        p #{item.content}
+                                        p Fonctionnalité : #{item.fonctionnality}
+                                        p Technologies abordées : #{item.technology}
+
+// Contact
+section#contact.white.scrollspy
+    .container
+        .case
+            .row
+                .col.s12.l8.offset-l2
+                    .title3
+                        h2 Localisation
+                        hr
+                    .row
+                        .align-center
+                            #map
+                    //- .row
+                    //-     form#formulaire.form
+                    //-         h5 Envoyez moi un mail 
+                    //-         span#ancre_flash 
+                    //-         .row
+                    //-             .input-field.col.s6
+                    //-                 i.material-icons.prefix account_circle
+                    //-                 input#first_name(type='text', required='required')
+                    //-                 label(for='first_name') Prénom
+                    //-             .input-field.col.s6
+                    //-                 input#last_name(type='text', required='required')
+                    //-                 label(for='last_name') Nom
+                    //-         .row
+                    //-             .input-field.col.s12
+                    //-                 i.material-icons.prefix email
+                    //-                 input#email.validate(type='email', required='required')
+                    //-                 label(for='email') Email
+                    //-         .row
+                    //-             .input-field.col.s12
+                    //-                 i.material-icons.prefix mode_edit
+                    //-                 textarea#message.materialize-textarea(required='required')
+                    //-                 label(for='message') Message ..
+                    //-         .row
+                    //-             .center-align
+                    //-                 button.valign.btn.btn-large.waves-effect.waves-light.green(type='submit', name='action')
+                    //-                     | Envoyer                                                    
+                    //-                     i.material-icons.right send
+
+
+                                        
 include template/footer.jade

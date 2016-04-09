@@ -1,20 +1,24 @@
-title: Valentin Bourreau | Présentation, CV, Portefolio
+title: Valentin Bourreau | Webdesigner & Developpeur Front-End
 
 social:
     -
         name: linkedin
+        link: https://www.linkedin.com/in/valentin-bourreau-870a44b8
     -
         name: github
+        link: https://github.com/Ninglight
     -
         name: instagram
+        link: https://www.instagram.com/valning/
     -
         name: dribbble
+        link: https://dribbble.com/Ninglight
 
 menu:
     -
-        link: headline
-        icon: home
-        name: Accueil
+        link: accueil
+        icon:
+        name:
     -
         link: about
         icon: face
@@ -22,12 +26,16 @@ menu:
     -
         link: skill
         icon: flash_on
-        name: Aptitudes
+        name: Compétences
+    -
+        link: timeline
+        icon: public
+        name: Parcours
     -
         link: portfolio
         icon: business_center
         name: PortFolio
     -
         link: contact
-        icon: directions_run
-        name: Contact
+        icon: announcement
+        name: Localisation

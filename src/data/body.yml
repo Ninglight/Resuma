@@ -1,48 +1,176 @@
+about:
+    -
+        name: Nom
+        content: Valentin Bourreau
+    -
+        name: Naissance
+        content: 26 Avril 1995
+    -
+        name: Adresse
+        content: Nantes, France
+    -
+        name: Mail
+        content: valentin.bourreau@gmail.com
+
+aboutText:
+    -
+        content: À la recherche d'une formation me permettant une spécialisation dans le domaine du Web, je souhaite approfondir et élargir mes connaissances dans le WebDesign et le Développement Front-end. Ces domaines étant pour moi mes projets futurs de professionnalisation.
+    -
+        content: Plus particulièrement, le domaine de l'UX me fascine par son intérêt de la psychologie des utilisateurs.
+    -
+        content: Dans la continuité de la licence SIL que je réalise actuellement, l'obtention d'une validation BAC +5 me parait essentielle au vu du marché du travail actuel et afin de prétendre un jour à la gestion de projet Web dans son ensemble.
+    -
+        content: Ma passion pour le Web se développe de plus en plus vers la partie visuelle des applications avec le graphisme et le développement Front-End, tout en étant conscient des enjeux de la partie cachée de l'iceberg, puisque j'y ai effectué mes études.
+    -
+        content: De nature créative, j'aime pouvoir me donner au maximum dans tous type de projet où le dialogue, le partage et la volonté de bien faire sont réunis.
+
+
+
 skill:
     -
         name: Graphisme
         icon: graphic
+        color: lime
         techno:
             -
                 name: Illustator
-                icon: illustator
-            -
-                name: Photoshop
-                icon: photoshop
+                icon: illustrator.svg
+                percent: 70
+                content: Apprentissage réalisé en Autodicate fin 2015.
             -
                 name: Edge Animate
-                icon: animate
+                icon: animate.png
+                percent: 50
+                content: Apprentissage réalisé en Autodicate debut 2016.
+            -
+                name: Photoshop
+                icon: photoshop.svg
+                percent: 20
+                content: Apprentissage réalisé en Autodicate fin 2015.
 
     -
         name: Front-end
         icon: front
+        color: purple
         techno:
             -
                 name: HTML
-                icon: html
+                icon: html5.svg
+                percent: 90
+                content: Apprentissage réalisé lors de mon BAC STG GSI
+                techno: Jade
             -
                 name: CSS
-                icon: css
+                icon: css3.svg
+                percent: 80
+                content: Apprentissage réalisé lors de mon BAC STG GSI
+                techno: SASS.
+                framework: Materialize, BootStrap.
             -
                 name: Javascript
-                icon: javascript
+                icon: js.svg
+                percent: 50
+                content: Apprentissage réalisé en Autodicate. AngularJs fut pour le Projet Printers réalisé au Département du Maine et Loire.
+                techno: Gulp, Bower.
+                framework: AngularJs, ReactJs, Jquery.
     -
         name: Back-end
         icon: back
+        color: green
         techno:
             -
                 name: PHP
-                icon: php
+                icon: php.svg
+                percent: 70
+                content: Apprentissage réalisé lors de mon BAC STG GSI. CakePHP fut pour le Projet Printers réalisé au Département du Maine et Loire.
+                framework: Slim, CakePHP.
             -
                 name: NodeJs
-                icon: node
+                icon: node.svg
+                percent: 50
+                content: Apprentissage réalisé lors de ma licence Pro SIL. NodeJs et Express sont utlisés pour le Projet Vitaora.
+                framework: Express.
     -
         name: Operating System
         icon: operate
+        color: red
         techno:
             -
-                name: Serveur (Nginx/Apache)
-                icon: ngnix
+                name: OS
+                icon: command.svg
+                percent: 70
+                content: Linux : OS sur un VPS d'OVH pour le nom de domaine vatioa.com et utilisation quotidienne.
+                content2: Windows : Maintenance Serveur Windows chez Drouault ETS.
             -
-                name: Base de données (MySQL/Postgresql)
-                icon: apache
+                name: Serveur
+                icon: webserver.svg
+                percent: 80
+                content: Nginx & Apache : Serveur Web sur un VPS d'OVH pour le nom de domaine vatioa.com.
+            -
+                name: Base de données
+                icon: database.svg
+                percent: 70
+                content: MySQL : Base de données sur un VPS d'OVH pour le nom de domaine vatioa.com.
+                content2:Postgresql : Projet Printers réalisé au Département du Maine et Loire.
+
+timeline:
+    -
+        name: Baccalauréat Sciences et Technologies de la Gestion (STG)
+        location: Lycée André Malraux
+        city: Allonnes(72)
+        date_start: Sept. 2012
+        date_end: Sept. 2013
+        icon: graduation-cap
+        content: Option : Gestion des systèmes d'information (Mention Assez Bien).
+    -
+        name: BTS Services Informatiques aux Organisations (SIO)
+        location: Lycée St-Croix St-Charles
+        city: Le Mans(72)
+        date_start: Sept. 2013
+        date_end: Sept. 2015
+        icon: graduation-cap
+        content: Option : Solutions Logicielles et Applications Métiers.
+    -
+        name: Apprenti Administrateur Réseau et Développeur Informatique
+        location: Drouault ETS
+        city: Le Mans(72)
+        date_start: Sept. 2013
+        date_end: Sept. 2015
+        icon: briefcase
+        content: Intégration dans un système d'information : Maintenance réseau infomatique (Windows Server 2003), Développement informatique (ERP Silog, Crystal Reports, SQL Server, VB Basic), Assistance Utilisateur.
+    -
+        name: Licence Pro Systèmes Informatiques et Logiciels (SIL)
+        location: Université de Nantes
+        city: Nantes(44)
+        date_start: Sept. 2015
+        date_end: Sept. 2016
+        icon: graduation-cap
+        content: Spécialité : Développement d'applications réparties.
+    -
+        name: Apprenti Analyste Développeur
+        location: Département du Maine et Loire
+        city: Angers(49)
+        date_start: Sept. 2015
+        date_end: Sept. 2016
+        icon: briefcase
+        content: Réalisation d'une solution de gestion du parc d'impression des administrations du Département du Maine et Loire divisé en deux application :
+        content2: Programme (Perl) permettant la récupération de données relatives aux imprimantes.
+        content3: Application Web (SPA) permettant la visualisation et l'administration des imprimantes.
+
+portfolio:
+    -
+        name: Vitaora
+        img: img/project/vitaora.svg
+        statut: Work in Progress
+        link:
+        content: Projet réalisé à titre personnel.
+        fonctionnality: Assistant Personnel (Gestion des comptes, des idées, des activités, soit du temps en général).
+        technology: Jade, Sass, Gulp, AngularJs, NodeJS.
+    -
+        name: Printers
+        img: img/project/printers.svg
+        statut: Work in Progress
+        link:
+        content: Projet réalisé durant mon apprentissage au sein du Département du Maine et Loire
+        fonctionnality: Application de gestion d'un parc d'imprimante.
+        technology: Perl, Jade, Sass, Gulp, AngularJs, CakePHP.

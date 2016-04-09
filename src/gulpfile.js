@@ -23,7 +23,7 @@ gulp.task('compass', function(){
     return gulp.src('sass/*.scss')
         .pipe($.plumber())
         .pipe($.compass({
-            css: './dist/css',
+            css: './../dist/css',
             sass: 'sass',
             image: 'img'
         }))
@@ -38,7 +38,7 @@ gulp.task('img', function(){
 });
 
 gulp.task('js', function(){
-    return gulp.src('js/bin/*.js')
+    return gulp.src('js/*.js')
         .pipe($.uglify())
         .pipe(gulp.dest('./../dist/js'));
 });
@@ -64,6 +64,7 @@ gulp.task('default', ['dist'], function(){
 
 gulp.task('watch', function(){
     var server = $.livereload();
+    gulp.watch('js/*.js', ['js']);
     gulp.watch('sass/*.scss', ['compass']);
     gulp.watch('*.jade', function(){
         gulp.start('jade');
