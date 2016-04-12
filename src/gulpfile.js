@@ -48,7 +48,12 @@ gulp.task('font', function() { 
         .pipe(gulp.dest('./../dist/font')); 
 });
 
-gulp.task('dist', ['js', 'compass', 'jade', 'font', 'img'], function(){
+gulp.task('file', function() { 
+    return gulp.src('files/**.*') 
+        .pipe(gulp.dest('./../dist/files')); 
+});
+
+gulp.task('dist', ['js', 'compass', 'jade', 'font','file', 'img'], function(){
     return gulp.src('./../dist/*.html')
         .pipe($.useref())
         .pipe(gulp.dest('./../dist/'));

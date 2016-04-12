@@ -140,7 +140,7 @@ $('a[href^="#"]').click(function(){
 
 function checkScroll(pos) {
 	//si on a défilé de plus de 550px du haut vers le bas
-	if (pos > $(window).height()) {
+	if (pos > document.getElementById('accueil').offsetHeight) {
 		//on ajoute la classe "fixNavigation" à <nav id="navigation">
 		$('#navigation').addClass("fixNavigation");
 		$('#about').css('margin-top', '64px');
@@ -169,7 +169,7 @@ function isMobileAndTablet() {
 }
 
 $(function(){
-	// $(window).scroll(function () {//Au scroll dans la fenetre on déclenche la fonction
+	$(window).scroll(function () {//Au scroll dans la fenetre on déclenche la fonction
 	//
 	//
 	//     if ($(this).scrollTop() > 620) { //si on a défilé de plus de 520px du haut vers le bas et que nous sommes sur une autre page que home.php
@@ -186,18 +186,18 @@ $(function(){
 	//
 	//     }
 	//
-	//     if($(this).scrollTop() > 56 ) { //si on a défilé de plus de 1px du haut vers le bas
-	//         if(!$('#banniere').hasClass('headBlur')) {
-	//             $('#banniere').removeClass('headInit');
-	//             $('#banniere').addClass('headBlur');
-	//         }
-	//     } else {
-	//         if($('#banniere').hasClass('headBlur')) {
-	//             $('#banniere').removeClass('headBlur');
-	//             $('#banniere').addClass('headInit');
-	//         }
-	//     }
-	// });
+	    if($(this).scrollTop() > 56 ) { //si on a défilé de plus de 1px du haut vers le bas
+	        if(!$('#banniere').hasClass('headBlur')) {
+	            $('#banniere').removeClass('headInit');
+	            $('#banniere').addClass('headBlur');
+	        }
+	    } else {
+	        if($('#banniere').hasClass('headBlur')) {
+	            $('#banniere').removeClass('headBlur');
+	            $('#banniere').addClass('headInit');
+	        }
+	    }
+	});
 });
 /*
 $( document ).ready(function() {

@@ -2,53 +2,16 @@ include template/head.jade
 
 include template/header.jade
 
-// Navigation
-nav#navigation
-    .nav-wrapper
-        a.brand-logo.hide-on-large-only(href='#!')
-            img(src='img/logo.png', alt='logo')
-        a.button-collapse(href='#', data-activates='mobile-demo')
-            i.material-icons menu
-        ul.left.hide-on-med-and-down.table-of-contents
-            each item in menu
-                li(class=".btn_#{item.link}")
-                    a(href='##{item.link}')
-                        i.material-icons.md-light.left #{item.icon}
-                        | #{item.name}
-        ul#mobile-demo.side-nav
-            each item in menu
-                li(class=".btn_#{item.link}")
-                    a(href='##{item.link}')
-                        .row.valign-wrapper
-                            .s1.valign
-                                i.material-icons.md-light #{item.icon}
-                            .col.offset-s1.s9.valign #{item.name}
-                            
-                            
-//- nav#navigation.fixed
-//-     .nav-wrapper
-//-         a.button-collapse(href="#" data-activates="mobile-demo")
-//-             i.material-icons menu
-//-         ul.left.hide-on-med-and-down
-//-             each item in menu
-//-                 li
-//-                     a(href="#{item.link}")
-//-                         i.material-icons.md-light #{item.icon}
-//-                             span #{item.name}
-//-                             
-//-         ul#mobile-demo.side-nav
-//-             each item in menu
-//-                 li
-//-                     a(href="#{item.link}") #{item.name}
+include template/nav.jade
 
 // About
 section#about.about.white.scrollspy
     .container
-        .case
-            .row
-                .col.s12.l8.offset-l2
-                    .title3
-                        h2 presentation
+        .row
+            .col.s12.l8.offset-l2
+                .case
+                    .title
+                        h1 Presentation
                         hr
          
         .row
@@ -79,7 +42,7 @@ section#about.about.white.scrollspy
                                 strong #{item.name}
                                 |  #{item.content}
                     .center-bottom
-                        a.waves-effect.waves-light.btn.indigo.lighten-1(href="../ressources/Curriculum Vitae - Valentin Bourreau.pdf" target="_blank")
+                        a.waves-effect.waves-light.btn.indigo.lighten-1(href="files/Curriculum Vitae - Valentin Bourreau.pdf" target="_blank")
                             i.material-icons.right file_download
                             | Télécharger le CV
                         
@@ -94,11 +57,11 @@ section#about.about.white.scrollspy
 // Skill        
 section#skill.white.scrollspy
     .container
-        .case
-            .row
-                .col.s12.l8.offset-l2
-                    .title3
-                        h2 competences
+        .row
+            .col.s12.l8.offset-l2
+                .case
+                    .title
+                        h1 Competences
                         hr
         .row
             each item in skill
@@ -125,12 +88,14 @@ section#skill.white.scrollspy
                                             if tech.techno
                                                 p Technologies utilisées : #{tech.techno}
                                             if tech.framework
-                                                p Framework utilisées : #{tech.framework}
+                                                p Framework utilisés : #{tech.framework}
                                             p #{tech.content}
                                             if tech.content2
                                                 p #{tech.content2}
+                                            if tech.content3
+                                                p #{tech.content3}
         .row
-            .sub-section.right
+            .addInfo.right
                 img.hand(src="img/hand.svg")
                 p Cliquez sur les compétences pour plus d'information
                                             
@@ -138,11 +103,11 @@ section#skill.white.scrollspy
 // Timeline
 section#timeline.white.scrollspy
     .container
-        .case
-            .row
-                .col.s12.l8.offset-l2
-                    .title3
-                        h2 Parcours
+        .row
+            .col.s12.l8.offset-l2
+                .case
+                    .title
+                        h1 Parcours
                         hr
                     .row
                         each item in timeline
@@ -167,11 +132,11 @@ section#timeline.white.scrollspy
 // PortFolio
 section#portfolio.white.scrollspy
     .container
-        .case
-            .row
-                .col.s12.l8.offset-l2
-                    .title3
-                        h2 PortFolio
+        .row
+            .col.s12.l8.offset-l2
+                .case
+                    .title
+                        h1 PortFolio
                         hr
                     .row
                         each item in portfolio
@@ -194,11 +159,11 @@ section#portfolio.white.scrollspy
 // Contact
 section#contact.white.scrollspy
     .container
-        .case
-            .row
-                .col.s12.l8.offset-l2
-                    .title3
-                        h2 Localisation
+        .row
+            .col.s12.l8.offset-l2
+                .case
+                    .title
+                        h1 Localisation
                         hr
                     .row
                         .align-center

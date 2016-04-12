@@ -1,0 +1,21 @@
+// Navigation
+nav#navigation
+    .nav-wrapper
+        a.brand-logo.hide-on-large-only(href='#!')
+            img(src='img/logo.png', alt='logo')
+        a.button-collapse(href='#', data-activates='mobile-demo')
+            i.material-icons menu
+        ul.left.hide-on-med-and-down.table-of-contents
+            each item in menu
+                li(class=".btn_#{item.link}")
+                    a(href='##{item.link}')
+                        i.material-icons.md-light.left #{item.icon}
+                        | #{item.name}
+        ul#mobile-demo.side-nav
+            each item in menu
+                li(class=".btn_#{item.link}")
+                    a(href='##{item.link}')
+                        .row.valign-wrapper
+                            .s1.valign
+                                i.material-icons.md-light #{item.icon}
+                            .col.offset-s1.s9.valign #{item.name}

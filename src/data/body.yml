@@ -22,9 +22,7 @@ aboutText:
     -
         content: Ma passion pour le Web se développe de plus en plus vers la partie visuelle des applications avec le graphisme et le développement Front-End, tout en étant conscient des enjeux de la partie cachée de l'iceberg, puisque j'y ai effectué mes études.
     -
-        content: De nature créative, j'aime pouvoir me donner au maximum dans tous type de projet où le dialogue, le partage et la volonté de bien faire sont réunis.
-
-
+        content: De nature créative, j'aime pouvoir me donner au maximum dans tout type de projet où le dialogue, le partage et la volonté de bien faire sont réunis.
 
 skill:
     -
@@ -70,9 +68,9 @@ skill:
                 name: Javascript
                 icon: js.svg
                 percent: 50
-                content: Apprentissage réalisé en Autodicate. AngularJs fut pour le Projet Printers réalisé au Département du Maine et Loire.
-                techno: Gulp, Bower.
-                framework: AngularJs, ReactJs, Jquery.
+                content: Apprentissage réalisé en Autodicate. AngularJs fut utiliser pour le projet Printers réalisé au Département du Maine et Loire.
+                techno: Gulp, Browserify.
+                framework: AngularJs, Jquery.
     -
         name: Back-end
         icon: back
@@ -82,13 +80,13 @@ skill:
                 name: PHP
                 icon: php.svg
                 percent: 70
-                content: Apprentissage réalisé lors de mon BAC STG GSI. CakePHP fut pour le Projet Printers réalisé au Département du Maine et Loire.
+                content: Apprentissage réalisé lors de mon BAC STG GSI. CakePHP fut utiliser pour le projet Printers réalisé au Département du Maine et Loire.
                 framework: Slim, CakePHP.
             -
                 name: NodeJs
                 icon: node.svg
                 percent: 50
-                content: Apprentissage réalisé lors de ma licence Pro SIL. NodeJs et Express sont utlisés pour le Projet Vitaora.
+                content: Apprentissage réalisé lors de ma licence Pro SIL. Express est utilisé pour le projet Vitaora.
                 framework: Express.
     -
         name: Operating System
@@ -102,7 +100,7 @@ skill:
                 content: Linux : OS sur un VPS d'OVH pour le nom de domaine vatioa.com et utilisation quotidienne.
                 content2: Windows : Maintenance Serveur Windows chez Drouault ETS.
             -
-                name: Serveur
+                name: Serveur Web
                 icon: webserver.svg
                 percent: 80
                 content: Nginx & Apache : Serveur Web sur un VPS d'OVH pour le nom de domaine vatioa.com.
@@ -111,7 +109,9 @@ skill:
                 icon: database.svg
                 percent: 70
                 content: MySQL : Base de données sur un VPS d'OVH pour le nom de domaine vatioa.com.
-                content2:Postgresql : Projet Printers réalisé au Département du Maine et Loire.
+                content2: Postgresql : Projet Printers réalisé au Département du Maine et Loire.
+                content3: Redis : Apprentissage réalisé lors de ma licence Pro SIL.
+
 
 timeline:
     -
@@ -161,15 +161,15 @@ portfolio:
     -
         name: Vitaora
         img: img/project/vitaora.svg
-        statut: Work in Progress
+        statut: En cours de réalisation
         link:
         content: Projet réalisé à titre personnel.
-        fonctionnality: Assistant Personnel (Gestion des comptes, des idées, des activités, soit du temps en général).
-        technology: Jade, Sass, Gulp, AngularJs, NodeJS.
+        fonctionnality: Couche applicative regroupant des modules d'assitance disposant chacun de leur fonction. (Module de gestion des comptes, des idées, des projets).
+        technology: Jade, Sass, Gulp, ReactJs, NodeJS, Web Components.
     -
         name: Printers
         img: img/project/printers.svg
-        statut: Work in Progress
+        statut: En cours de réalisation
         link:
         content: Projet réalisé durant mon apprentissage au sein du Département du Maine et Loire
         fonctionnality: Application de gestion d'un parc d'imprimante.
