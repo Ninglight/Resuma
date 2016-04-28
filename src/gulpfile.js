@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     $    = require('gulp-load-plugins')(),
     YAML = require('yamljs');
 
+
 gulp.task('jade', function() {
     return gulp.src('*.jade', function() {
         return gulp.src('*.jade')
@@ -64,7 +65,9 @@ gulp.task('dist', ['js', 'compass', 'jade', 'font','file', 'img'], function(){
 gulp.task('default', ['dist'], function(){
     return gulp.src('./../dist/**/*')
         .pipe($.zip('Resuma.zip'))
-        .pipe(gulp.dest('./../zip/'));
+        .pipe(gulp.dest('./../zip/'))
+        .pipe($.notify({message: 'Fin de la compilation'}));
+
 });
 
 gulp.task('watch', function(){
