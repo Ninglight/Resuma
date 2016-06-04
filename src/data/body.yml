@@ -68,9 +68,9 @@ skill:
                 name: Javascript
                 icon: js.svg
                 percent: 50
-                content: Apprentissage réalisé en Autodicate. AngularJs fut utiliser pour le projet Printers réalisé au Département du Maine et Loire.
+                content: Apprentissage réalisé à l'Université de Nantes et en Autodicate. AngularJs et Polymer furent utilisés pour le projet Printa réalisé au Département du Maine et Loire.
                 techno: Gulp, Browserify.
-                framework: AngularJs, Jquery.
+                framework: AngularJs, Jquery, Polymer.
     -
         name: Back-end
         icon: back
@@ -80,8 +80,8 @@ skill:
                 name: PHP
                 icon: php.svg
                 percent: 70
-                content: Apprentissage réalisé lors de mon BAC STG GSI. CakePHP fut utiliser pour le projet Printers réalisé au Département du Maine et Loire.
-                framework: Slim, CakePHP.
+                content: Apprentissage réalisé lors de mon BAC STG GSI. Laravel et CakePHP furent utilisés pour le projet Printa réalisé au Département du Maine et Loire.
+                framework: Slim, CakePHP, Laravel.
             -
                 name: NodeJs
                 icon: node.svg
@@ -167,10 +167,10 @@ portfolio:
         fonctionnality: Couche applicative regroupant des modules d'assitance disposant chacun de leur fonction. (Module de gestion des comptes, des idées, des projets).
         technology: Jade, Sass, Gulp, ReactJs, NodeJS, Web Components.
     -
-        name: Printers
+        name: Printa
         img: img/project/printers.svg
         statut: En cours de réalisation
         link:
         content: Projet réalisé durant mon apprentissage au sein du Département du Maine et Loire
         fonctionnality: Application de gestion d'un parc d'imprimante.
-        technology: Perl, Jade, Sass, Gulp, AngularJs, CakePHP.
+        technology: Perl, Polymer, Gulp, AngularJs, Laravel.
