@@ -159,18 +159,10 @@ timeline:
 
 portfolio:
     -
-        name: Vitaora
-        img: img/project/vitaora.svg
-        statut: En cours de réalisation
-        link:
-        content: Projet réalisé à titre personnel.
-        fonctionnality: Couche applicative regroupant des modules d'assitance disposant chacun de leur fonction. (Module de gestion des comptes, des idées, des projets).
-        technology: Jade, Sass, Gulp, ReactJs, NodeJS, Web Components.
-    -
         name: Printa
         img: img/project/printers.svg
         statut: En cours de réalisation
-        link:
+        link: https://github.com/Ninglight/printa
         content: Projet réalisé durant mon apprentissage au sein du Département du Maine et Loire
         fonctionnality: Application de gestion d'un parc d'imprimante.
         technology: Perl, Polymer, Gulp, AngularJs, Laravel.
